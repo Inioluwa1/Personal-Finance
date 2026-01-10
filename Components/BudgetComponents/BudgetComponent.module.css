@@ -1,0 +1,174 @@
+.BudgetCardContainer{
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  width: 100%;
+  color: rgb(32, 31, 36)
+  /* border: 3px solid red; */
+}
+.BudgetCardContainer p {
+  color: grey;
+}
+.Entertainment{
+  display: flex;
+  /* align-items: center */
+  margin-bottom: 1rem;
+}
+
+.Dot {
+  padding: 1px 10px;
+  background-color: rgb(21, 138, 62);
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+.ProgressBar{
+  width: 100%;
+  margin-top: 1rem;
+  height: 3rem;
+  background-color: rgb(248, 245, 240);
+  border-radius: 5px;
+  padding: 0.4rem;
+}
+.ProgressBarFill{
+  background-color: rgb(21, 138, 62);
+  height: 100%;
+  border-radius: 5px;
+}
+
+.SpentnRemaining{
+  /* border: 3px solid yellow; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  margin-top: 1rem;
+}
+
+.Spent{
+  border-left: 4px solid rgb(21, 138, 62);
+  padding-left: 1rem;
+}
+.Spent p {
+  margin-bottom: 0.5rem;
+}
+
+.Remaining{
+  border-left: 4px solid grey;
+  padding-left: 1rem;
+}
+.Remaining p {
+  margin-bottom: 0.5rem;
+}
+
+/* Add Budget Styles */
+.AddBudgetContainer{
+  background-color: white;
+  padding: 1.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+}
+.AddBudgetHeader{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.CloseIcon{
+  cursor: pointer;
+  color: grey;
+}
+.Category {
+  color: grey;
+  margin-bottom: 1rem;
+  font-size: 1rem
+}
+.AddBudgetForm{
+  display: flex;
+  flex-direction: column;
+  /* border: 3px solid red; */
+  height: 100%
+}
+.BudgetCategory, .MaximumSpend ,.Theme{
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.BudgetCategory label, .MaximumSpend label ,.Theme label{
+  color: grey;
+  margin-bottom: 0.3rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.BudgetCategory select, .Theme select{
+  padding: 0.5rem; 
+  border-radius: 5px;
+  font-size: 1rem;
+}
+.MaximumSpendInput{
+  display: flex;
+  align-items: center;
+  border: 1px solid grey;
+  padding-left: 0.5rem;
+  color: black;
+  border-radius: 5px;
+}
+.MaximumSpend input{
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  width: 100%;
+}
+.AddBudgetButton{
+  margin-top: auto;
+  padding: 0.8rem 1.8rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(32, 31, 36);
+  color: white;
+  cursor: pointer;
+}
+.AddBudgetButton:hover{
+  background-color: rgba(32, 31, 36, 0.6)
+}
+
+/* Theme Button Styles */
+.selectWrapper{
+  width: 100%;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+.selectButton{
+  width: 100%;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.open{
+  border-bottom: 1px solid grey;
+  padding-bottom: 0.2rem;
+}
+
+.circle {
+  padding: 1px 10px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.dropDown{
+  /* border: 3px solid red; */
+  margin-top: 0.2rem;
+}
+.options{
+  margin-top: 0.2rem;
+  /* border: 3px solid red; */
+  cursor: pointer;
+  padding: 0.2rem 0;
+}

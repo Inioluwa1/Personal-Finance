@@ -1,0 +1,39 @@
+.BudgetMainSection{
+  background: rgba(0,0,0,0.5)
+}
+
+.BudgetHeader{
+  display: flex;
+  /* border: 3px solid red; */
+  align-items: center;
+  justify-content: space-between;
+}
+.Button{
+  padding: 0.8rem 1.8rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(32, 31, 36);
+  color: white;
+  cursor: pointer;
+}
+.Button:hover{
+  background-color: rgba(32, 31, 36, 0.6)
+}
+.BudgetCard{
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 5rem;
+  row-gap: 1.5rem;
+  /* border: 3px solid green */
+}
+.AddBudgetSection{
+  /* border: 3px solid red; */
+  border-radius: 10px;
+  position: absolute;
+  top: 20%;
+  left: 35%;
+  width: 30%;
+  min-height: 50%;
+}

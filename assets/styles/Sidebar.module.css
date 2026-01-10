@@ -1,0 +1,217 @@
+.SideBarContainer{
+  /* border: 2px solid brown; */
+  background-Color: rgb(32, 31, 36);
+  width: 20%;
+  color: grey;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.image{
+  margin-left: 1rem;
+  margin-top: -1rem
+}
+
+.linkContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: -1.5rem;
+}
+
+.links {
+  width: 90%;
+  margin-top: 1.5rem;
+  /* border: 2px solid white; */
+  padding: 0.7rem 1rem;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.chosen{
+  background-color: white;
+  color: rgb(32, 31, 36);
+  margin-left: 1.6rem;
+  border-radius: 0;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.link{
+  text-decoration: none;
+  color: grey;
+  margin-left: 1rem
+}
+
+.minimizeMenu{
+  display: flex;
+  margin-left: 1rem;
+  position: fixed;
+  align-items: center;
+  bottom: 90px;
+}
+.minimizeMenu p {
+  margin-left: 1rem;
+}
+
+/* Card styles */
+.CardContainer{
+  margin: 2rem 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Card{
+  background-color: rgb(32, 31, 36);
+  padding: 1rem;
+  width: 30%;
+  border-radius: 10px;
+  color: white;
+}
+.Card p{
+  margin-bottom: 0.8rem;
+  color: rgb(200, 197, 197)
+}
+
+.Card2{
+  background-color: white;
+  padding: 1rem;
+  width: 30%;
+  border-radius: 10px;
+}
+.Card2 p{
+  margin-bottom: 0.8rem;
+  color: rgb(144, 124, 124)
+}
+
+/* General Styles */
+
+.Container{
+  width: 100%;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 10px;
+}
+.Header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+}
+.Header p{
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.Link{
+  text-decoration: none;
+  color: grey;
+  display: flex;
+  align-items: center;
+}
+.LinkImage{
+  margin-left: 1rem
+}
+
+/* Pots Styles */
+.PotsContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+.PotsSaved{
+  width: 45%;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  /* border: 3px solid red; */
+  padding: 1rem;
+  background-color: #f8f5f0;
+  border-radius: 10px;
+}
+.PotsSaved p{
+  margin: 1rem 0
+}
+.PotsCategories{
+  width: 52%;
+  /* border: 3px solid red; */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem
+}
+.PotsCategories p {
+  color: grey;
+}
+.Pots1{
+  border-left: 4px solid rgb(41, 143, 41);
+  padding-left: 1rem
+}
+.Pots2{
+  border-left: 4px solid rgb(27, 173, 241);
+  padding-left: 1rem
+}
+.Pots3{
+  border-left: 4px solid black;
+  padding-left: 1rem
+}
+.Pots4{
+  border-left: 4px solid rgb(227, 191, 30);
+  padding-left: 1rem
+}
+
+/* Transactions Styles */
+
+
+/* Recurring Styles */
+.ReoccuringContainer{
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.Reoccured1{
+  width: 100%;
+  background-color: #f8f5f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 1rem;
+  border-radius: 10px;
+  border-left: 4px solid rgb(55, 87, 55);
+}
+.Reoccured2{
+  width: 100%;
+  background-color: #f8f5f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 1rem;
+  border-radius: 10px;
+  border-left: 4px solid rgb(197, 168, 26);
+}
+.Reoccured3{
+  width: 100%;
+  background-color: #f8f5f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 1rem;
+  border-radius: 10px;
+  border-left: 4px solid rgb(33, 189, 186);
+}
+.Reoccured4{
+  width: 100%;
+  background-color: #f8f5f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 1rem;
+  border-radius: 10px;
+  border-left: 4px solid rgb(192, 33, 128);
+}
