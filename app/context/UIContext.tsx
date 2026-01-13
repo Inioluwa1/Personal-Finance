@@ -3,26 +3,37 @@
 import {createContext, useContext, useState, ReactNode} from "react"
 
 interface UIContextType{
-  openAddNew: boolean;
-  setOpenAddNew?: (value: boolean) => void;
+  addNew: boolean;
   openAddNewBudget: () => void;
   closeAddNewBudget: () => void;
+  editTray: boolean;
+  openEditTray: () => void;
+  closeEditTray: () => void;
+  editBudget: boolean;
+  openEditBudget: () => void;
+  closeEditBudget: () => void;
 }
 
 const UIContext = createContext<UIContextType | undefined >(undefined);
 
 export const UIProvider = ({children}: {children: ReactNode}) => {
-  const [openAddNew, setOpenAddNew] = useState<boolean>(false)
+  const [addNew, setAddNew] = useState<boolean>(false)
+  const [editTray, setEditTray] = useState<boolean>(false)
+  const [editBudget, setEditBudget] = useState<boolean>(false)
 
-  const openAddNewBudget = () => setOpenAddNew(true);
-  const closeAddNewBudget = () => setOpenAddNew(false);
+  const openAddNewBudget = () => setAddNew(true);
+  const closeAddNewBudget = () => setAddNew(false);
+  const openEditBudget = () => setEditBudget(true);
+  const closeEditBudget = () => setEditBudget(false);
+  const openEditTray = () => setEditTray(true);
+  const closeEditTray = () => setEditTray(false);
 
   return (
     <UIContext.Provider
     value={{
-      openAddNew,
-      openAddNewBudget,
-      closeAddNewBudget,
+      addNew, openAddNewBudget, closeAddNewBudget,
+      editTray, openEditTray, closeEditTray,
+      editBudget, openEditBudget, closeEditBudget,
     }}>
       {children }
     </UIContext.Provider>

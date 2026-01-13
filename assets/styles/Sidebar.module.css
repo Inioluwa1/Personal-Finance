@@ -89,12 +89,13 @@
 }
 
 /* General Styles */
-
 .Container{
   width: 100%;
   background-color: white;
   padding: 1rem;
   border-radius: 10px;
+  /* border: 3px solid red; */
+  height: 100%;
 }
 .Header{
   display: flex;

@@ -16,7 +16,7 @@ export default function ThemeButton() {
 
   return (
     <div className={styles.selectWrapper}>
-      <div className={`${styles.selectButton} ${themeOpen? styles.open : "" }`} onClick={() => setThemeOpen(!open)}> 
+      <div className={`${styles.selectButton} ${themeOpen? styles.open : "" }`} onClick={() => setThemeOpen(!themeOpen)}> 
         <span className={styles.circle} style={{background: selected.color}} />
         {selected.name}
       </div>

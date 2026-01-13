@@ -14,12 +14,8 @@
   /* border: 3px solid green; */
 }
 
-.PotsnTransactions{
-  display: flex;
-  flex-direction: column;
+.Transactions{
   width: 49%;
-  gap: 1rem;
-  height: 100%;
   /* border: 3px solid red; */
 }
 

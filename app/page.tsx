@@ -13,8 +13,7 @@ export default function Home() {
         <BalanceCard />
       </div>
       <div className={styles.SplitPage}>
-        <div className={styles.PotsnTransactions}>
-          <PotsCard />
+        <div className={styles.Transactions}>
           <TransactionsCard />
         </div>
         <div className={styles.Recurring}>

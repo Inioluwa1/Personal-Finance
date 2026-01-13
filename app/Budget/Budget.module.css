@@ -1,14 +1,21 @@
-.BudgetMainSection{
-  background: rgba(0,0,0,0.5)
+.budgetContainer{
+  /* border: 3px solid green; */
+  height: 100%;
 }
-
-.BudgetHeader{
+.budgetMainSection{
+  /* border: 3px solid red; */
+  height: 100%
+}
+.overlay{
+  opacity: 0.2
+}
+.budgetHeader{
   display: flex;
   /* border: 3px solid red; */
   align-items: center;
   justify-content: space-between;
 }
-.Button{
+.button{
   padding: 0.8rem 1.8rem;
   font-weight: 600;
   border: none;
@@ -20,7 +27,7 @@
 .Button:hover{
   background-color: rgba(32, 31, 36, 0.6)
 }
-.BudgetCard{
+.budgetCard{
   margin-top: 1rem;
   display: grid;
   grid-template-columns: auto auto;
@@ -28,7 +35,7 @@
   row-gap: 1.5rem;
   /* border: 3px solid green */
 }
-.AddBudgetSection{
+.addBudgetSection{
   /* border: 3px solid red; */
   border-radius: 10px;
   position: absolute;

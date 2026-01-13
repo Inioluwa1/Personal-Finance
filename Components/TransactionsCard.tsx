@@ -13,6 +13,9 @@ export default function TransactionsCard() {
           <Image src="assets/images/icon-caret-right.svg" alt="Next" width={10} height={10} className={styles.LinkImage} />
         </Link>
       </div>
+      <div>
+        
+      </div>
     </div>
   )
 }
