@@ -22,7 +22,7 @@ export default function BudgetPage() {
           <BudgetCard />
           <BudgetCard />
         </div>
-      </div>
+      </div> 
       {addNew && 
       <div className={styles.addBudgetSection}>
         <AddBudget />

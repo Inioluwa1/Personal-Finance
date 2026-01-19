@@ -44,3 +44,19 @@
   width: 30%;
   min-height: 50%;
 }
+
+/* Mobile View */
+@media screen and (max-width: 900px) {
+  .budgetHeader{
+    height: auto;
+    width: 100%;
+  }
+  .budgetCard{
+    display: flex;
+    flex-direction: column;
+  }
+  .addBudgetSection{
+    left: 3%;
+    width: 94%;
+  }
+}

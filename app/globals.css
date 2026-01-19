@@ -22,3 +22,15 @@
   width: 100%;
   padding: 2rem;
 }
+
+/* Mobile view */
+@media screen and (max-width: 900px) {
+  .ApplicationContainer{
+    flex-direction: column;
+    height: auto;
+    width: 95%;
+  }
+  .ContentContainer{
+    padding: 1rem 0.5rem;
+  }
+}

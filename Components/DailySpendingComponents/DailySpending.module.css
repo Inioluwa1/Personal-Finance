@@ -24,3 +24,47 @@
 .Button:hover{
   background-color: rgba(32, 31, 36, 0.6)
 }
+
+/* Mobile View */
+@media screen and (max-width: 749px) {
+  .Form{
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    width: 100%;
+  }
+  .label {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  .Input{
+    display: block;
+    margin-bottom: 10px;
+  }
+  .Button{
+    width: 50%
+  }
+}
+
+@media screen and (min-width: 749px) {
+  .Form {
+    /* border: 3px solid red; */
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+  .Button{
+    width: 60%;
+    margin-top: 1rem;
+  }
+}
+
+/* @media screen and (min-width: 1100px){
+  .Form{
+    display: grid;
+    
+  }
+  .Button{
+    width: 50%;
+
+  }
+} */

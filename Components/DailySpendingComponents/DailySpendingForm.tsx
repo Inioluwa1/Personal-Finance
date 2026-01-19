@@ -5,15 +5,15 @@ export default function DailySpendingForm() {
   return (
     <form className={styles.Form}>
       <div>
-        <label> Date: </label>
+        <label className={styles.label}> Date: </label>
         <input type="date" className={styles.Input}/>
       </div>
       <div>
-        <label> Item bought: </label>
+        <label className={styles.label}> Item bought: </label>
         <input type="text" className={styles.Input}/>
       </div>
       <div>
-        <label> Price: </label>
+        <label className={styles.label}> Price: </label>
         <input type="number" className={styles.Input}/>
       </div>
       <div>

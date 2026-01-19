@@ -23,3 +23,16 @@
   /* border: 3px solid red; */
   width: 49%;
 }
+
+/*  */
+@media screen and (max-width: 900px) {
+  .SplitPage{
+    flex-direction: column;
+    height: auto;
+    width: 95%;
+  }
+  .Transactions, .Recurring{
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
