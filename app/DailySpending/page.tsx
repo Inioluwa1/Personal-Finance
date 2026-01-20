@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './DailySpending.module.css'
 import DailySpendingForm from '@/Components/DailySpendingComponents/DailySpendingForm'
+import DailySpendingDisplay from '@/Components/DailySpendingComponents/DailySpendingDIsplay'
 
 export default function DailySpending() {
   return (
@@ -10,8 +11,8 @@ export default function DailySpending() {
           <DailySpendingForm />
         </div>
         <div className={styles.Display}> 
-          Display
+          <DailySpendingDisplay />
         </div>
-      </div>
+      </div> 
   )
 }

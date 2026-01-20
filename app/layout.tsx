@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Sidebar from "@/Components/Sidebar";
-import {UIProvider} from './context/UIContext'
+import Providers from "./providers";
 
 export const metadata: Metadata = {
   title: "Personal Finance",
@@ -18,11 +18,11 @@ export default function RootLayout({
       <body>
         <div className="ApplicationContainer">
           <Sidebar />
-          <UIProvider>
-            <div className="ContentContainer">
-              {children}
-            </div>
-          </UIProvider>
+          <Providers>
+              <div className="ContentContainer">
+                {children}
+              </div>
+          </Providers>
         </div>
       </body>
     </html>

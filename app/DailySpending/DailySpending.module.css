@@ -1,20 +1,23 @@
 .Form{
   /* border: 3px solid red; */
   margin-top: 1rem;
-  
+  min-height: 13vh;
 }
 .Display{
   /* border: 3px solid red; */
   margin-top: 1rem;
-  padding: 1rem;
+  height: 63vh;
 }
 
 /* Mobile View */
 @media screen and (max-width: 1500px) {
+  .Form{
+    height: auto;
+  }
+
   .Display{
     flex-direction: column;
     min-height: 50vh;
-    /* width: 95%; */
   }
 }
 

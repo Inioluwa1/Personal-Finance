@@ -1,8 +1,17 @@
-.Form {
+/* Input form */
+.FormContainer {
   display: flex;
   align-items: center;
   justify-content: space-between;
   /* border: 3px solid green; */
+}
+.Form{
+  /* border: 3px solid red; */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap:wrap
 }
 
 .Input {
@@ -10,6 +19,7 @@
   border-bottom: 2px solid #ccc;
   padding: 0.7rem 0.4rem;
   font-size: 1.2rem;
+  margin-right: 1rem;
 }
 
 .Button{
@@ -25,9 +35,16 @@
   background-color: rgba(32, 31, 36, 0.6)
 }
 
+/* Display */
+.displayContainer{
+  border: 3px solid grey;
+  overflow-y: scroll;
+  height: 100%
+}
+
 /* Mobile View */
 @media screen and (max-width: 749px) {
-  .Form{
+  .FormContainer{
     flex-direction: column;
     align-items: flex-start;
     height: auto;
@@ -46,8 +63,8 @@
   }
 }
 
-@media screen and (min-width: 749px) {
-  .Form {
+@media screen and (min-width: 749px) and (max-width: 900px) {
+  .FormContainer {
     /* border: 3px solid red; */
     display: grid;
     grid-template-columns: auto auto;
@@ -58,13 +75,16 @@
   }
 }
 
-/* @media screen and (min-width: 1100px){
-  .Form{
-    display: grid;
-    
+@media screen and (min-width: 900px){
+  .FormContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
   .Button{
-    width: 50%;
+    margin-top: 1rem;
+    width: 15%;
 
   }
-} */
+}
