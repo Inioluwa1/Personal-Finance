@@ -1,0 +1,64 @@
+/* Transaction Input */
+.transactionInputContainer{
+  /* border: 3px solid red; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.inputContainer{
+  border: 1px solid grey;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px;
+  padding: 0.2rem 0.5rem;
+  width: 30%
+}
+.inputContainer input{
+  border: none;
+  outline: none;
+  width: 90%;
+  padding: 0.2rem;
+  font-size: 1rem;
+}
+.chooseInput{
+  /* border: 3px solid yellow; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 55%;
+  font-size: 0.9rem;
+}
+.sortBy{
+  /* border: 3px solid black; */
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: grey;
+}
+.sortBySelect{
+  /* border: 3px solid red; */
+  padding: 0.7rem 0.5rem;
+  width: 60%;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.category{
+  /* border: 3px solid brown; */
+  width: 55%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.categorySelect{
+  width: 70%;
+  padding: 0.7rem 0.5rem;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* Transactoin Display */
+
+
+/* Mobile View */

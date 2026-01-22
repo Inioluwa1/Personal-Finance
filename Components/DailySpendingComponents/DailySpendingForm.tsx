@@ -9,6 +9,12 @@ import { useDispatch } from 'react-redux'
 export default function DailySpendingForm() {
   const dispatch = useDispatch();
 
+  const formatDate = (dateStr:string):string => {
+    const [year, month, day] = dateStr.split("-")
+    const Dday = day.slice(0, 2)
+    return `${Dday}/${month}/${year}`
+  }
+
   const [formData, setFormData] = useState<DailySpendingFormProps>({
     id:"",
     date: "",
@@ -31,6 +37,7 @@ export default function DailySpendingForm() {
     const newEntry = {
       ...formData,
       price: Number(formData.price),
+      date: formatDate(formData.date),
       id: Math.random()
     }
 
@@ -91,11 +98,11 @@ export default function DailySpendingForm() {
             value={formData.category}
           >
             <option value="" hidden disabled> Select an option </option>
-            <option value="food"> Food </option>
-            <option value="transportation"> Transportation </option>
-            <option value="entertainment"> Entertainment </option>
-            <option value="utilities"> Utilities </option>
-            <option value="others"> Others </option>
+            <option value="Food"> Food </option>
+            <option value="Transportation"> Transportation </option>
+            <option value="Entertainment"> Entertainment </option>
+            <option value="Utilities"> Utilities </option>
+            <option value="Others"> Others </option>
           </select>
         </div>
       </div>

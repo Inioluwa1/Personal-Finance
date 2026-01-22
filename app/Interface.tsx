@@ -2,7 +2,7 @@ import Feeding from '@/public/assets/images/Food.jpg';
 import Transport from '@/public/assets/images/Transport.jpg';
 import Entertainment from '@/public/assets/images/Entertainment.jpg';
 import Utilities from '@/public/assets/images/Utilities.jpg';
-import Others from '@/public/assets/images/Others.jpg'
+import Others from '@/public/assets/images/Others.jpg';
 import type { StaticImageData } from 'next/image';
 
 export type Category = "Food" | "Transportation" | "Entertainment" | "Utilities" | "Others";
