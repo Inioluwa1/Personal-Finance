@@ -11,7 +11,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap:wrap
+  flex-wrap: wrap;
 }
 
 .Input {
@@ -20,6 +20,7 @@
   padding: 0.7rem 0.4rem;
   font-size: 1.2rem;
   margin-right: 1rem;
+  cursor: pointer;
 }
 
 .Button{
@@ -55,12 +56,42 @@
   margin-bottom: 1rem;
   font-size: 1.2rem;
 }
+.transctionItemDetailsContainer{
+  /* border: 3px solid red; */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 80%
+}
+.transactionItemDatenClose{
+  /* border: 3px solid red; */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.close{
+  cursor: pointer;
+  color: red;
+}
+.close:hover{
+  color: rgba(255, 0, 0, 0.5);
+}
+.transactionItemDetails{
+  /* border: 3px solid blue; */
+  margin-top: 0.5rem;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+}
 .transactionItemImage {
   /* border: 3px solid red; */
   border-radius: 50%;
 }
-.transactionItemDate, .transactionItemBought {
+.transactionItemDate {
   color: grey;
+  font-size: 1.1rem;;
 }
 .transactionItemPrice{
   font-weight: 600;
@@ -85,30 +116,38 @@
   .Button{
     width: 50%
   }
+  /* Display */
+  .displayContainer{
+    display: block;
+    /* border: 3px solid grey; */
+  }
+  .transactionItem{
+    width: 100%;
+    margin: 0;
+    margin-bottom: 0.5rem;
+  }
+  .transctionItemDetailsContainer{
+    margin-left: 0.5rem;
+  }
+  .transactionItemBought{
+    /* border: 3px solid red; */
+    width: 70%;
+  }
+  .transactionItemPrice{
+    /* border: 3px solid red; */
+    min-width: auto;
+  }
 }
 
-@media screen and (min-width: 749px) and (max-width: 900px) {
+@media screen and (min-width: 749px){
   .FormContainer {
     /* border: 3px solid red; */
-    display: grid;
-    grid-template-columns: auto auto;
+    flex-direction: column;
+    align-items: flex-start;
   }
   .Button{
-    width: 60%;
+    width: 25%;
     margin-top: 1rem;
   }
 }
 
-@media screen and (min-width: 900px){
-  .FormContainer{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-  .Button{
-    margin-top: 1rem;
-    width: 15%;
-
-  }
-}

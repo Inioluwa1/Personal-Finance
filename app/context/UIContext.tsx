@@ -1,18 +1,7 @@
 "use client"
 
 import {createContext, useContext, useState, ReactNode} from "react"
-
-interface UIContextType{
-  addNew: boolean;
-  openAddNewBudget: () => void;
-  closeAddNewBudget: () => void;
-  editTray: boolean;
-  openEditTray: () => void;
-  closeEditTray: () => void;
-  editBudget: boolean;
-  openEditBudget: () => void;
-  closeEditBudget: () => void;
-}
+import { UIContextType } from "../Interface";
 
 const UIContext = createContext<UIContextType | undefined >(undefined);
 

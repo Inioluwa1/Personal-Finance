@@ -12,10 +12,12 @@ export default function TransactionPage() {
         <div className={styles.transactionInput}>
           <TransactionInput />
         </div>
-        <div>
+        <div className={styles.transactionDisplay}>
           <TransactionDisplay />
         </div>
-        <TransactionFooter />
+        <div className={styles.transactionFooter}>
+          <TransactionFooter />
+        </div>
       </div>
     </div>
   )

@@ -14,6 +14,11 @@ export default function TransactionInput() {
           <label> Sort by </label>
           <select className={styles.sortBySelect}>
             <option> Latest </option>
+            <option> Oldest </option>
+            <option> A to Z </option>
+            <option> Z to A </option>
+            <option> Highest </option>
+            <option> Lowest </option>
           </select>
         </div>
         <div  className={styles.category}>

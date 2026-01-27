@@ -4,8 +4,8 @@ import React from 'react'
 import Image from 'next/image';
 import styles from './DailySpending.module.css'
 import { useSelector } from 'react-redux';
-import { State } from "@/app/Interface"
-import { CategoryImageMap } from '@/app/Interface';
+import { State, CategoryImageMap } from "@/app/Interface"
+import { MdDelete } from 'react-icons/md';
 
 export default function DailySpendingDisplay() {
   const transactions = useSelector((state: State) => state.transactions.transactions)
@@ -18,9 +18,8 @@ export default function DailySpendingDisplay() {
 
   const date = new Date().toISOString();
   const todaysDate = formatDate(date)
-  // console.log("date", todaysDate)
-
-  const todaysTransactions = transactions.filter(transaction => transaction.date === todaysDate)
+  
+  const todaysTransactions = transactions.filter(transaction => transaction.date === todaysDate) 
 
   return (
     <div className={styles.displayContainer}>
@@ -29,9 +28,16 @@ export default function DailySpendingDisplay() {
         return (
         <div key={transaction.id} className={styles.transactionItem}>
           <Image src={categoryImage} width={70} height={70} alt={transaction.itemBought} className={styles.transactionItemImage} />
-          <p className={styles.transactionItemDate}> {transaction.date} </p>
-          <p className={styles.transactionItemBought}> {transaction.itemBought} </p>
-          <p className={styles.transactionItemPrice}> #{transaction.price} </p>
+          <div className={styles.transctionItemDetailsContainer}>
+            <div className={styles.transactionItemDatenClose}>
+              <p className={styles.transactionItemDate}> {transaction.date} </p>
+              <MdDelete className={styles.close} />
+            </div>
+            <div className={styles.transactionItemDetails}>
+              <p className={styles.transactionItemBought}> {transaction.itemBought} </p>
+              <p className={styles.transactionItemPrice}> #{transaction.price} </p>
+            </div>
+          </div>
         </div>
       )})}
     </div>

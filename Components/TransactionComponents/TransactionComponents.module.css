@@ -25,7 +25,7 @@
   /* border: 3px solid yellow; */
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; 
   width: 55%;
   font-size: 0.9rem;
 }
@@ -58,7 +58,189 @@
   cursor: pointer;
 }
 
-/* Transactoin Display */
+/* Transaction Display */
+.tableHeader{
+  /* border: 3px solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: grey;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.itemBought{
+  /* border: 3px solid red; */
+  width: 51%;
+}
+.info{
+  /* border: 3px solid red; */
+  width: 15%;
+}
 
+/* Transaction Display Card */
+/* Desktop */
+.desktopTransactionDisplayCard{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* border: 3px solid green; */
+  margin-bottom: 0.7rem;
+}
+.desktopTransactionItem{
+  width: 51%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.desktopTransactionItemImage{
+  /* width: 5%; */
+  border-radius: 50%;
+  /* border: 3px solid red; */
+  margin-right: 1rem;
+}
+.desktopTransactionItemBought{
+  /* border: 3px solid red; */
+  width: 90%;
+}
+.desktopTransactionItemCategory{
+  /* border: 3px solid red; */
+  width: 15%;
+}
+.desktopTransactionItemDate{
+  /* border: 3px solid red; */
+  width: 15%;
+}
+.desktopTransactionItemPrice{
+  /* border: 3px solid red; */
+  width: 15%
+}
+/* Mobile */
+.mobileTransactionDisplayCard{
+  /* border: 3px solid red; */
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+.mobileTransactionDetails{
+  width: 80%;
+}
+.mobileTransactionItemImage{
+  /* border: 3px solid red; */
+  margin-right: 1rem;
+}
+.mobileTransactionIndividualDetails{
+  /* border: 3px solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* margin-bottom: 1rem; */
+  padding: 0.5rem 0;
+}
+
+/* Transaction Footer */
+.transactionFooter{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.prevPage, .nextPage{
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  color: grey
+}
+
+.prevPage:hover, .nextPage:hover{
+  background: rgb(32, 31, 36);
+  color: white ;
+}
+.prevLinkImage {
+  margin-right: 0.5rem;
+}
+.nextLinkImage {
+  margin-left: 0.5rem;
+}
+.pagination{
+  /* border: 3px solid red; */
+  display: flex;
+  min-width: 20%;
+  align-items: center;
+  justify-content: space-between;
+}
+.page, .active{
+  border: 1px solid black;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  color: grey;
+}
+.active{
+  background: rgb(32, 31, 36);
+  color: white;
+}
 
 /* Mobile View */
+@media screen and (max-width: 749px) {
+  /* Transaction Input */
+  .transactionInputContainer{
+    flex-direction: column;
+    align-items: flex-start;
+    /* border: 3px solid green; */
+    margin-top: 0.5rem;
+  }
+  .inputContainer{
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  .chooseInput{
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .sortBy, .category{
+    width: 80%;
+    margin-bottom: 0.5rem;
+  }
+  .sortBySelect{
+    width: 80%;
+  }
+
+  /* Transaction Display */
+  .tableHeader{
+    display: none;
+  }
+
+  /* Transaction Footer */
+  .prevPage, .nextPage{
+    padding: 0.5rem;
+  }
+  .prevLinkImage{
+    margin-right: 0.2rem;
+  }
+  .nextLinkImage{
+    margin-left: 0.2rem;
+  }
+  .pagination{
+    /* border: 3px solid red; */
+    min-width: 35%;
+  }
+  .page, .active{
+    padding: 0.3rem 0.5rem;
+  }
+}
+
+@media screen and (min-width: 749px) and (max-width: 1500px) {
+  .pagination{
+    min-width: 28%;
+  }
+}
+
+@media screen and (max-width:1600px) {
+  .tableHeader{
+    display: none;
+  }
+}
