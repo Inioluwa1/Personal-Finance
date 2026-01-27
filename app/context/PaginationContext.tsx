@@ -10,7 +10,7 @@ const PaginationContext = createContext<PaginationContextType | undefined>(undef
 export const PaginationProvider = ({children} : {children: ReactNode}) => {
   const isDesktop = useMediaQuery("(min-width:768px")
   const transactions = useSelector((state: State) => state.transactions.transactions)
-  const itemsPerPage = isDesktop? 8 : 4;
+  const itemsPerPage = isDesktop? 8 : 5;
   const maxPageButtons = 4;
   const [currentPage, setCurrentPage] = useState<number>(1)
   const totalPages = Math.ceil(transactions.length/itemsPerPage)

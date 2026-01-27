@@ -29,18 +29,19 @@
 
 @media screen and (max-width: 749px) {
   .transactionContainer{
-    min-height: 60vh;
+    height: 80vh;
   }
   .displayContainer{
-    min-height: 60vh;
+    height: 75vh;
     padding: 0;
   }
   .transactionDisplay{
     margin-top: 0.5rem;
   }
   .transactionFooter{
-    width: 100%;
-    bottom: 0;
+    width: 94%;
+    bottom: 1rem;
+    left: 3%
   }
 }
 
