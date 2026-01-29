@@ -264,12 +264,6 @@
     margin-top: 2rem;
     margin-bottom: 2rem;
   }
-  .hamburger{
-    color: rgb(255, 255, 255);
-  }
-  .hamburger:hover{
-    color: rgba(255, 255, 255, 0.5)
-  }
 
   /* Card Styles */
   .CardContainer {
