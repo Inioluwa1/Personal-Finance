@@ -8,7 +8,7 @@ import { useMediaQuery } from "./DesktopSize"
 const PaginationContext = createContext<PaginationContextType | undefined>(undefined);
 
 export const PaginationProvider = ({children} : {children: ReactNode}) => {
-  const isDesktop = useMediaQuery("(min-width:768px")
+  const isDesktop = useMediaQuery("(min-width:768px") 
   const transactions = useSelector((state: State) => state.transactions.transactions)
   const itemsPerPage = isDesktop? 8 : 5;
   const maxPageButtons = 4;
@@ -45,7 +45,8 @@ export const PaginationProvider = ({children} : {children: ReactNode}) => {
   return (
     <PaginationContext.Provider
     value={{
-      goToPrevious, goToNext, getPageNumbers, currentTransactions, currentPage, totalPages, setCurrentPage,
+      goToPrevious, goToNext, getPageNumbers, setCurrentPage,
+      currentTransactions, currentPage, totalPages, 
     }}>
       {children}
     </PaginationContext.Provider>

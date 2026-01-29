@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Sidebar from "@/Components/Sidebar";
 import Providers from "./providers";
 
 export const metadata: Metadata = {
@@ -16,14 +15,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className="ApplicationContainer">
-          <Sidebar />
-          <Providers>
-              <div className="ContentContainer">
-                {children}
-              </div>
-          </Providers>
-        </div>
+        <Providers>
+            {children}
+        </Providers>
       </body>
     </html>
   );

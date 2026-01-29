@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from "@/assets/styles/Sidebar.module.css"
+import styles from "@/assets/styles/Components.module.css"
 
 export default function BalanceCard() {
   return (

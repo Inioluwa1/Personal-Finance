@@ -16,6 +16,9 @@ export interface UIContextType{
   editBudget: boolean;
   openEditBudget: () => void;
   closeEditBudget: () => void;
+  menuTray: boolean;
+  openMenuTray: () => void;
+  closeMenuTray: () => void;
 }
 
 export interface PaginationContextType {

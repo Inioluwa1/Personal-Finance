@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import styles from "@/assets/styles/Sidebar.module.css"
+import styles from "@/assets/styles/Components.module.css"
 
 
 export default function PotsCard() {

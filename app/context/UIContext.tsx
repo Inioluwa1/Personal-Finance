@@ -9,6 +9,7 @@ export const UIProvider = ({children}: {children: ReactNode}) => {
   const [addNew, setAddNew] = useState<boolean>(false)
   const [editTray, setEditTray] = useState<boolean>(false)
   const [editBudget, setEditBudget] = useState<boolean>(false)
+  const [menuTray, setMenuTray] = useState<boolean>(true)
 
   const openAddNewBudget = () => setAddNew(true);
   const closeAddNewBudget = () => setAddNew(false);
@@ -16,6 +17,9 @@ export const UIProvider = ({children}: {children: ReactNode}) => {
   const closeEditBudget = () => setEditBudget(false);
   const openEditTray = () => setEditTray(true);
   const closeEditTray = () => setEditTray(false);
+  const openMenuTray = () => setMenuTray(true)
+  const closeMenuTray = () => setMenuTray(false)
+  
 
   return (
     <UIContext.Provider
@@ -23,6 +27,7 @@ export const UIProvider = ({children}: {children: ReactNode}) => {
       addNew, openAddNewBudget, closeAddNewBudget,
       editTray, openEditTray, closeEditTray,
       editBudget, openEditBudget, closeEditBudget,
+      menuTray, openMenuTray, closeMenuTray,
     }}>
       {children }
     </UIContext.Provider>

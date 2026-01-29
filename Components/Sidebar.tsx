@@ -4,11 +4,20 @@ import React from 'react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
-import styles from "@/assets/styles/Sidebar.module.css"
+import styles from "@/assets/styles/Components.module.css"
+import { useUIContext } from '@/app/context/UIContext'
+import { GiHamburgerMenu } from 'react-icons/gi'
+import { useMediaQuery } from '@/app/context/DesktopSize';
 
 export default function Sidebar() {
   const pathname = usePathname();
-
+  const { menuTray, openMenuTray, closeMenuTray } = useUIContext();
+  const isDesktop = useMediaQuery("(min-width: 768px)")
+  const closeSideBar = () => {
+    if(!isDesktop){
+      closeMenuTray();
+    }
+  }
   const SidebarLinks = [
     {
       name: "Overview",
@@ -38,22 +47,28 @@ export default function Sidebar() {
   ]
 
   return (
-    <div className={styles.SideBarContainer} >
-      <Image src="assets/images/logo-large.svg" alt="Finance logo" width={100} height={100} className={styles.image} />
-      <div className={styles.linkContainer}>
-        {SidebarLinks.map((link, index) => {
-          const isActive = pathname === link.href ;
-        return (
-          <span key={index} className={`${styles.links} ${isActive ? styles.chosen : ''}`} >
-            <Image src={link.icon} alt={link.name} width={15} height={15} className={styles.linkIcon} />
-            <Link href={link.href} className={styles.link}> {link.name} </Link>
-          </span>
-        )})}
-      </div>
-      <div className={styles.minimizeMenu} >
-        <Image src="assets/images/icon-minimize-menu.svg" alt="Minimize menu" width={15} height={15} />
-        <p> MInimize Menu </p>
-      </div>
+    <div className={`${styles.SideBarMainContainer} ${menuTray? "" : styles.close}`}>
+      {menuTray? 
+        <div className={styles.SideBarContainer}>
+          <Image src="assets/images/logo-large.svg" alt="Finance logo" width={100} height={100} className={styles.image} />
+          <div className={styles.linkContainer}>
+            {SidebarLinks.map((link, index) => {
+              const isActive = pathname === link.href;
+            return (
+              <span key={index} className={`${styles.links} ${isActive ? styles.chosen : ''}`} onClick={closeSideBar}>
+                <Image src={link.icon} alt={link.name} width={15} height={15} className={styles.linkIcon} />
+                <Link href={link.href} className={styles.link}> {link.name} </Link>
+              </span>
+            )})}
+          </div>
+          <div className={styles.minimizeMenu} onClick={closeMenuTray} >
+            <Image src="assets/images/icon-minimize-menu.svg" alt="Minimize menu" width={15} height={15} />
+            <p> MInimize Menu </p>
+          </div>
+        </div> 
+      : 
+        <GiHamburgerMenu size={50} onClick={openMenuTray} className={styles.hamburger}/>
+      }
     </div>
   )
 }

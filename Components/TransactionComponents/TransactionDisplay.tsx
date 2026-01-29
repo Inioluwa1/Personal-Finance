@@ -10,6 +10,7 @@ import { usePaginationContext } from '@/app/context/PaginationContext'
 export default function TransactionDisplay() {
   const isDesktop = useMediaQuery("(min-width:768px")
   const { currentTransactions } = usePaginationContext();
+  
   return (
     <div>
       <div className={styles.tableHeader}>

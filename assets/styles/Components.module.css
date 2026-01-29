@@ -1,10 +1,22 @@
+.SideBarMainContainer{
+  /* border: 3px solid green; */
+  width: 25%;
+}
+.close{
+  width: 3%;
+}
+
 .SideBarContainer{
-  /* border: 2px solid brown; */
+  width: 100%;
+  /* border: 3px solid green; */
   background-Color: rgb(32, 31, 36);
-  width: 20%;
   color: grey;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
+  height: 100%;
+}
+.hidden{
+  display: none
 }
 
 .image{
@@ -51,9 +63,24 @@
   position: fixed;
   align-items: center;
   bottom: 90px;
+  cursor: pointer;
 }
 .minimizeMenu p {
   margin-left: 1rem;
+}
+
+.hamburger {
+  /* border: 3px solid red; */
+  margin: 1rem 0.5rem;
+  cursor: pointer;
+  color: rgb(32, 31, 36)
+}
+.hamburger:hover{
+  color: rgba(32, 31, 36, 0.6)
+}
+
+.mobileSideBar{
+  background: rgb(32, 31, 36);
 }
 
 /* Card styles */
@@ -220,17 +247,28 @@
 
 /* Mobile View */
 @media screen and (max-width: 900px) {
-  .SideBarContainer{
+  .SideBarMainContainer{
+    width: 100%;
+    /* border: 3px solid red; */
+    /* background: rgb(32, 31, 36);  */
+  }
+  .mobileHeader{
     width: 100%;
     border-radius: 0px;
-    padding-bottom: 2rem;
-  }
-  .linkContainer{
-
+    /* padding-bottom: 2rem;
+    height: 100%; */
+    /* border: 3px solid green; */
   }
   .minimizeMenu{
     position: static;
-    margin-top: 2rem;;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  .hamburger{
+    color: rgb(255, 255, 255);
+  }
+  .hamburger:hover{
+    color: rgba(255, 255, 255, 0.5)
   }
 
   /* Card Styles */
@@ -241,9 +279,10 @@
     width: 100%;
     margin-bottom: 1rem;
   }
+
 }
 
-@media screen and (min-width: 901px) {
+@media screen and (min-width: 901px) and (max-width: 1000px) {
   .SideBarContainer{
     width: 35%;
   }
