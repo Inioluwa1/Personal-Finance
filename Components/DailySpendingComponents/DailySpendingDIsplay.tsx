@@ -6,8 +6,11 @@ import styles from './DailySpending.module.css'
 import { useSelector } from 'react-redux';
 import { State, CategoryImageMap } from "@/app/Interface"
 import { MdDelete } from 'react-icons/md';
+import { deleteTransaction } from '@/app/store/TransactionSlice';
+import { useDispatch } from 'react-redux';
 
 export default function DailySpendingDisplay() {
+  const dispatch = useDispatch();
   const transactions = useSelector((state: State) => state.transactions.transactions)
 
   const formatDate = (dateStr:string):string => {
@@ -21,6 +24,10 @@ export default function DailySpendingDisplay() {
   
   const todaysTransactions = transactions.filter(transaction => transaction.date === todaysDate) 
 
+  const handleDelete = (id:number) => {
+    dispatch(deleteTransaction(id));
+  }
+
   return (
     <div className={styles.displayContainer}>
       {todaysTransactions.map(transaction => {
@@ -31,7 +38,7 @@ export default function DailySpendingDisplay() {
           <div className={styles.transctionItemDetailsContainer}>
             <div className={styles.transactionItemDatenClose}>
               <p className={styles.transactionItemDate}> {transaction.date} </p>
-              <MdDelete className={styles.close} />
+              <MdDelete className={styles.close} onClick={() => handleDelete(transaction.id)} />
             </div>
             <div className={styles.transactionItemDetails}>
               <p className={styles.transactionItemBought}> {transaction.itemBought} </p>

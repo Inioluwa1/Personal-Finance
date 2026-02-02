@@ -156,11 +156,14 @@ const TransactionSlice = createSlice({
     editTransaction: () => {
 
     },
-    deleteTransaction: () => {
-
+    deleteTransaction: (state, action) => {
+      state.transactions = state.transactions.filter(transaction => transaction.id !== action.payload)
+    },
+    sortbyFoodCategory: (state, action) => {
+      state.transactions = state.transactions.filter(transaction => transaction.category === "Food")
     }
   }
 })
 
-export const { addTransaction, editTransaction, deleteTransaction } = TransactionSlice.actions
+export const { addTransaction, editTransaction, deleteTransaction, sortbyFoodCategory } = TransactionSlice.actions
 export default TransactionSlice.reducer

@@ -1,6 +1,6 @@
 import React from 'react'
-import { IoIosSearch } from 'react-icons/io'
 import styles from "./TransactionComponents.module.css"
+import { IoIosSearch } from 'react-icons/io'
 
 export default function TransactionInput() {
   return (

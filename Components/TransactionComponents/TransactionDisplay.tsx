@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { useMediaQuery } from '@/app/context/DesktopSize'
+import TransactionInput from './TransactionInput'
 import DesktopTransactionDisplayCard from './DesktopTransactionDisplayCard'
 import MobileTransactionDisplayCard from './MobileTransactionDisplayCard'
 import styles from "./TransactionComponents.module.css"
@@ -13,9 +14,10 @@ export default function TransactionDisplay() {
   
   return (
     <div>
+      <TransactionInput />
       <div className={styles.tableHeader}>
         <p className={styles.itemBought}> Recipient/Item Bought </p>
-        <p className={styles.info}> Category </p>
+        <p className={styles.info}> Category </p>  
         <p className={styles.info}> Transaction Date </p>
         <p className={styles.info}> Amount </p>
       </div>

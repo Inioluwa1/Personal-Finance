@@ -66,11 +66,13 @@
   justify-content: space-between;
   color: grey;
   font-size: 1.2rem;
+  margin-top: 1rem;
   margin-bottom: 0.5rem;
+  width: 96%;
 }
 .itemBought{
   /* border: 3px solid red; */
-  width: 51%;
+  width: 53%;
 }
 .info{
   /* border: 3px solid red; */
@@ -114,6 +116,7 @@
   /* border: 3px solid red; */
   width: 15%
 }
+
 /* Mobile */
 .mobileTransactionDisplayCard{
   /* border: 3px solid red; */
@@ -181,6 +184,13 @@
 .active{
   background: rgb(32, 31, 36);
   color: white;
+}
+.close{
+  cursor: pointer;
+  color: red;
+}
+.close:hover{
+  color: rgba(255, 0, 0, 0.5);
 }
 
 /* Mobile View */

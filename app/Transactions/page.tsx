@@ -9,9 +9,6 @@ export default function TransactionPage() {
     <div className={styles.transactionContainer}>
       <h1> Transactions </h1>
       <div className={styles.displayContainer}>
-        <div className={styles.transactionInput}>
-          <TransactionInput />
-        </div>
         <div className={styles.transactionDisplay}>
           <TransactionDisplay />
         </div>
@@ -22,3 +19,4 @@ export default function TransactionPage() {
     </div>
   )
 }
+ 
