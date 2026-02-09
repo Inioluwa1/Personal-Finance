@@ -9,6 +9,7 @@ import { filteredTransactions } from "../store/TransactionSelectors"
 const PaginationContext = createContext<PaginationContextType | undefined>(undefined);
 
 export const PaginationProvider = ({children} : {children: ReactNode}) => {
+  
   const isDesktop = useMediaQuery("(min-width:768px")
   const transactions = useAppSelector(filteredTransactions) 
   const itemsPerPage = isDesktop? 8 : 5;
