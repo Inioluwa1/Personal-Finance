@@ -1,5 +1,5 @@
-import  { createSlice } from "@reduxjs/toolkit"
-import { TransactionState } from "@/app/Interface"
+import  { createSlice, PayloadAction } from "@reduxjs/toolkit"
+import { Category, TransactionState } from "@/app/Interface"
 
 const initialState: TransactionState = {
   transactions: [
@@ -144,6 +144,8 @@ const initialState: TransactionState = {
       category: "Others" 
     },
   ],
+  selectedCategory: "all",
+  searchQuery: "",
 }
 
 const TransactionSlice = createSlice({
@@ -159,11 +161,14 @@ const TransactionSlice = createSlice({
     deleteTransaction: (state, action) => {
       state.transactions = state.transactions.filter(transaction => transaction.id !== action.payload)
     },
-    sortbyFoodCategory: (state, action) => {
-      state.transactions = state.transactions.filter(transaction => transaction.category === "Food")
+    setSearchQuery: (state, action: PayloadAction<string>) => {
+      state.searchQuery = action.payload
+    },
+    setSelectedCategory: (state, action: PayloadAction<Category | "all">) => {
+      state.selectedCategory = action.payload
     }
   }
 })
 
-export const { addTransaction, editTransaction, deleteTransaction, sortbyFoodCategory } = TransactionSlice.actions
+export const { addTransaction, editTransaction, deleteTransaction, setSearchQuery, setSelectedCategory} = TransactionSlice.actions
 export default TransactionSlice.reducer

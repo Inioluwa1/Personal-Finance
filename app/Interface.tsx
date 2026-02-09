@@ -43,6 +43,8 @@ export interface Transaction {
 
 export interface TransactionState {
   transactions: Transaction[];
+  selectedCategory: Category | 'all';
+  searchQuery: string;
 }
 
 export interface DailySpendingFormProps {
@@ -56,7 +58,6 @@ export interface DailySpendingFormProps {
 export interface State{
   transactions: TransactionState;
 }
-
 
 export const CategoryImageMap:Record <Category, StaticImageData> = {
   Food: Feeding,

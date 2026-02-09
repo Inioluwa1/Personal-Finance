@@ -1,15 +1,16 @@
 "use client"
 
 import { createContext, useContext, useState, ReactNode} from "react"
-import { useSelector } from "react-redux"
-import { State, PaginationContextType } from "../Interface"
+import { PaginationContextType } from "../Interface"
 import { useMediaQuery } from "./DesktopSize"
+import { useAppSelector } from "../store/hook"
+import { filteredTransactions } from "../store/TransactionSelectors"
 
 const PaginationContext = createContext<PaginationContextType | undefined>(undefined);
 
 export const PaginationProvider = ({children} : {children: ReactNode}) => {
-  const isDesktop = useMediaQuery("(min-width:768px") 
-  const transactions = useSelector((state: State) => state.transactions.transactions)
+  const isDesktop = useMediaQuery("(min-width:768px")
+  const transactions = useAppSelector(filteredTransactions) 
   const itemsPerPage = isDesktop? 8 : 5;
   const maxPageButtons = 4;
   const [currentPage, setCurrentPage] = useState<number>(1)
@@ -31,7 +32,7 @@ export const PaginationProvider = ({children} : {children: ReactNode}) => {
     let start = Math.max(1, currentPage - half)
     let end = start + maxPageButtons - 1;
 
-    if(end> totalPages) {
+    if(end > totalPages) {
       end = totalPages;
       start = Math.max(1, end - maxPageButtons + 1)
     }

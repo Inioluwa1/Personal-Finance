@@ -1,18 +1,27 @@
 import React from 'react'
 import styles from "./TransactionComponents.module.css"
 import { IoIosSearch } from 'react-icons/io'
+import { useAppDispatch } from '@/app/store/hook'
+import { setSearchQuery, setSelectedCategory } from '@/app/store/TransactionSlice'
+import { Category } from '@/app/Interface'
 
 export default function TransactionInput() {
+  const dispatch = useAppDispatch()
+  
   return (
     <div className={styles.transactionInputContainer}>
       <div className={styles.inputContainer}>
-        <input type='text' placeholder='Search transaction' />
+        <input 
+          type='text' 
+          placeholder='Search transaction'
+          onChange={e => dispatch(setSearchQuery(e.target.value))}
+        />
         <IoIosSearch />
       </div>
       <div className={styles.chooseInput}>
         <div className={styles.sortBy}>
           <label> Sort by </label>
-          <select className={styles.sortBySelect}>
+          <select name="sort" className={styles.sortBySelect}>
             <option> Latest </option>
             <option> Oldest </option>
             <option> A to Z </option>
@@ -23,8 +32,8 @@ export default function TransactionInput() {
         </div>
         <div  className={styles.category}>
           <label> Category </label>
-          <select className={styles.categorySelect}>
-            <option> All transactions </option>
+          <select name="category" className={styles.categorySelect} onChange={(e) => dispatch(setSelectedCategory(e.target.value as Category | "all"))}>
+            <option value="all"> All transactions </option>
             <option value="Food"> Food </option>
             <option value="Transportation"> Transportation </option>
             <option value="Entertainment"> Entertainment </option>

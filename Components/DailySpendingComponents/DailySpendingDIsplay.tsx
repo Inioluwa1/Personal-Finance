@@ -3,15 +3,15 @@
 import React from 'react'
 import Image from 'next/image';
 import styles from './DailySpending.module.css'
-import { useSelector } from 'react-redux';
-import { State, CategoryImageMap } from "@/app/Interface"
+import { CategoryImageMap } from "@/app/Interface"
 import { MdDelete } from 'react-icons/md';
 import { deleteTransaction } from '@/app/store/TransactionSlice';
-import { useDispatch } from 'react-redux';
+import { useAppDispatch, useAppSelector } from '@/app/store/hook'
+import { filteredTransactions } from '@/app/store/TransactionSelectors';
 
 export default function DailySpendingDisplay() {
-  const dispatch = useDispatch();
-  const transactions = useSelector((state: State) => state.transactions.transactions)
+  const dispatch = useAppDispatch();
+  const transactions = useAppSelector(filteredTransactions)
 
   const formatDate = (dateStr:string):string => {
     const [year, month, day] = dateStr.split("-")

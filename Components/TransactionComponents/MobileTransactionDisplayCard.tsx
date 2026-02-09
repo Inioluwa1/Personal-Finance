@@ -4,10 +4,10 @@ import styles from "./TransactionComponents.module.css"
 import { Transaction, CategoryImageMap } from '@/app/Interface'
 import { MdDelete } from 'react-icons/md'
 import { deleteTransaction } from '@/app/store/TransactionSlice'
-import { useDispatch } from 'react-redux'
+import { useAppDispatch } from '@/app/store/hook' 
 
 export default function MobileTransactionDisplayCard({transaction}: {transaction: Transaction}) {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const handleDelete = (id:number) => {
     dispatch(deleteTransaction(id));

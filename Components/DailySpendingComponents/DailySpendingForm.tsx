@@ -4,10 +4,10 @@ import React, {useState} from 'react'
 import styles from './DailySpending.module.css'
 import { DailySpendingFormProps } from '@/app/Interface'
 import { addTransaction } from '@/app/store/TransactionSlice'
-import { useDispatch } from 'react-redux' 
+import { useAppDispatch } from '@/app/store/hook'
 
 export default function DailySpendingForm() {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const formatDate = (dateStr:string):string => {
     const [year, month, day] = dateStr.split("-")
