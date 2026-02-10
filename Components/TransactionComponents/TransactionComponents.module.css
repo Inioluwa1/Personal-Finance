@@ -125,7 +125,9 @@
   margin-bottom: 0.6rem;
 }
 .mobileTransactionDetails{
-  width: 80%;
+  width: 67%;
+  /* border: 3px solid green; */
+  margin-right: 2%;
 }
 .mobileTransactionItemImage{
   /* border: 3px solid red; */
@@ -187,10 +189,10 @@
 }
 .close{
   cursor: pointer;
-  color: red;
+  color: #6B7280;
 }
 .close:hover{
-  color: rgba(255, 0, 0, 0.5);
+  color: #9F1239;
 }
 
 /* Mobile View */

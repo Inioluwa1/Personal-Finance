@@ -26,11 +26,12 @@
 
 @media screen and (max-width: 749px) {
   .transactionContainer{
-    height: 80vh;
+    height: 83vh;
   }
   .displayContainer{
-    height: 75vh;
+    height: 78vh;
     padding: 0;
+    /* border: 3px solid red */
   }
   .transactionDisplay{
     margin-top: 0.5rem;
@@ -38,7 +39,8 @@
   .transactionFooter{
     width: 94%;
     bottom: 1rem;
-    left: 3%
+    left: 3%;
+    /* border: 3px solid red; */
   }
 }
 
