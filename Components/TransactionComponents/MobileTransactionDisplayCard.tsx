@@ -14,6 +14,7 @@ export default function MobileTransactionDisplayCard({transaction}: {transaction
   }
 
   const categoryImage = CategoryImageMap[transaction.category]
+  
   return (
     <div className={styles.mobileTransactionDisplayCard}>
       <Image src={categoryImage} width={70} height={70} alt={transaction.category} className={styles.mobileTransactionItemImage} />

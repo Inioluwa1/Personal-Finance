@@ -1,7 +1,5 @@
-import Image from "next/image";
 import styles from "./page.module.css";
 import BalanceCard from "@/Components/BalanceCard";
-import PotsCard from "@/Components/PotsCard";
 import TransactionsCard from "@/Components/TransactionsCard";
 import RecurringCard from "@/Components/RecurringCard";
 

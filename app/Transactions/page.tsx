@@ -1,5 +1,4 @@
 import React from 'react'
-import TransactionInput from '@/Components/TransactionComponents/TransactionInput'
 import TransactionDisplay from '@/Components/TransactionComponents/TransactionDisplay'
 import TransactionFooter from '@/Components/TransactionComponents/TransactionFooter'
 import styles from './Transactions.module.css'
@@ -11,12 +10,11 @@ export default function TransactionPage() {
       <div className={styles.displayContainer}>
         <div className={styles.transactionDisplay}>
           <TransactionDisplay />
-        </div>
         <div className={styles.transactionFooter}>
           <TransactionFooter />
         </div>
       </div>
+      </div>
     </div>
   )
 }
- 

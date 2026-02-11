@@ -29,7 +29,8 @@
   .SplitPage{
     flex-direction: column;
     height: auto;
-    width: 95%;
+    width: 100%;
+    /* border: 3px solid red; */
   }
   .Transactions, .Recurring{
     width: 100%;

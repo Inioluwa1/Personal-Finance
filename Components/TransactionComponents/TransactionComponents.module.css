@@ -80,6 +80,9 @@
 }
 
 /* Transaction Display Card */
+.mobileView{
+  display: none
+}
 /* Desktop */
 .desktopTransactionDisplayCard{
   display: flex;
@@ -242,6 +245,12 @@
   }
   .page, .active{
     padding: 0.3rem 0.5rem;
+  }
+  .desktopView{
+    display: none;
+  }
+  .mobileView{
+    display: block;
   }
 }
 

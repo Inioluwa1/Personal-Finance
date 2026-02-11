@@ -1,6 +1,6 @@
 "use client"
 
-import { createContext, useContext, useState, ReactNode} from "react"
+import { createContext, useContext, useState, ReactNode, useEffect} from "react"
 import { PaginationContextType } from "../Interface"
 import { useMediaQuery } from "./DesktopSize"
 import { useAppSelector } from "../store/hook"
@@ -10,7 +10,7 @@ const PaginationContext = createContext<PaginationContextType | undefined>(undef
 
 export const PaginationProvider = ({children} : {children: ReactNode}) => {
   
-  const isDesktop = useMediaQuery("(min-width:768px")
+  const isDesktop = useMediaQuery("(min-width:768px)")
   const transactions = useAppSelector(filteredTransactions) 
   const itemsPerPage = isDesktop? 8 : 5;
   const maxPageButtons = 4;
@@ -19,6 +19,12 @@ export const PaginationProvider = ({children} : {children: ReactNode}) => {
   const startIndex =(currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const currentTransactions = transactions.slice(startIndex, endIndex)
+
+  // useEffect(() => {
+  //   if(currentPage > totalPages && totalPages > 0){
+  //     setCurrentPage(totalPages)
+  //   }
+  // }, [currentPage, totalPages])
 
   const goToPrevious = () => {
     setCurrentPage(prev => Math.max(prev - 1, 1))
@@ -57,7 +63,7 @@ export const PaginationProvider = ({children} : {children: ReactNode}) => {
 
 export const usePaginationContext = ():PaginationContextType => {
   const context = useContext(PaginationContext);
-  if( context === undefined){
+  if(context === undefined){
     throw new Error("usPaginationContext must be used within a PaginationProvider")
   }
   return context;

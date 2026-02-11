@@ -1,7 +1,6 @@
 "use client"
 
 import React from 'react'
-import { useMediaQuery } from '@/app/context/DesktopSize'
 import TransactionInput from './TransactionInput'
 import DesktopTransactionDisplayCard from './DesktopTransactionDisplayCard'
 import MobileTransactionDisplayCard from './MobileTransactionDisplayCard'
@@ -9,7 +8,6 @@ import styles from "./TransactionComponents.module.css"
 import { usePaginationContext } from '@/app/context/PaginationContext'
 
 export default function TransactionDisplay() {
-  const isDesktop = useMediaQuery("(min-width:768px")
   const { currentTransactions } = usePaginationContext();
   
   return (
@@ -21,21 +19,12 @@ export default function TransactionDisplay() {
         <p className={styles.info}> Transaction Date </p>
         <p className={styles.info}> Amount </p>
       </div>
-      {
-        isDesktop?
-          currentTransactions.map(transaction => 
-            <DesktopTransactionDisplayCard
-              key={transaction.id}
-              transaction={transaction} 
-            />
-          ) :
-          currentTransactions.map(transaction => 
-            <MobileTransactionDisplayCard
-              key={transaction.id}
-              transaction={transaction} 
-            />
-          )
-      }
+      <div className={styles.desktopView}>
+        {currentTransactions.map(transaction => <DesktopTransactionDisplayCard key={transaction.id} transaction={transaction} />)}
+      </div>
+      <div className={styles.mobileView}>
+        {currentTransactions.map(transaction => <MobileTransactionDisplayCard key={transaction.id} transaction={transaction} />)}
+      </div>
     </div>
   )
 }

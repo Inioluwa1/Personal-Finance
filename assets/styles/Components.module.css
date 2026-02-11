@@ -194,7 +194,25 @@
 }
 
 /* Transactions Styles */
-
+/* IndTransactionCard */
+.indTransactionCardContainer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+  /* border: 3px solid green; */
+  margin-bottom: 0.3rem;
+}
+.IndTransactionCardItem{
+  width: 35%;
+}
+.IndTransactionCardCategory{
+  width: 30%;
+}
+.IndTransactionCardPrice{
+  width: 10%;
+  text-align: right
+}
 
 /* Recurring Styles */
 .ReoccuringContainer{
@@ -274,7 +292,15 @@
     width: 100%;
     margin-bottom: 1rem;
   }
-
+  .Container{
+    width: 100%;
+    /* border: 3px solid green; */
+    /* padding: 0; */
+  }
+  .IndTransactionCardPrice{
+    display: none;
+  }
+  
 }
 
 @media screen and (min-width: 901px) and (max-width: 1000px) {

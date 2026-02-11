@@ -6,7 +6,6 @@ import { store } from './store/store';
 import { UIProvider } from './context/UIContext'
 import { PaginationProvider } from './context/PaginationContext';
 import Sidebar from '@/Components/Sidebar';
-import MobileSidebar from '@/Components/MobileSidebar';
 
 
 export default function Providers({children} : {children: React.ReactNode}) {
