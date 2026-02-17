@@ -1,5 +1,5 @@
 import  { createSlice, PayloadAction } from "@reduxjs/toolkit"
-import { Category, TransactionState } from "@/app/Interface"
+import { Category, TransactionState, SortOption } from "@/app/Interface"
 
 const initialState: TransactionState = {
   transactions: [
@@ -7,145 +7,146 @@ const initialState: TransactionState = {
       id: 0,
       date: "2023-06-01", 
       itemBought: "Groceries", 
-      price: 50, 
+      price: 550, 
       category: "Food" 
     },
     { 
       id: 4,
       date: "2023-06-01", 
       itemBought: "Groceries2", 
-      price: 50, 
+      price: 510, 
       category: "Transportation" 
     },
     { 
       id: 1,
       date: "2023-06-01", 
       itemBought: "Groceries3", 
-      price: 50, 
+      price: 520, 
       category: "Entertainment" 
     },
     { 
       id: 2,
       date: "2023-06-01", 
       itemBought: "Groceries4", 
-      price: 50, 
+      price: 501, 
       category: "Utilities" 
     },
     { 
       id: 3,
       date: "2023-06-01", 
       itemBought: "Groceries5", 
-      price: 50, 
+      price: 508, 
       category: "Others" 
     },
     { 
       id: 10,
       date: "2023-06-01", 
       itemBought: "Groceries", 
-      price: 50, 
+      price: 590, 
       category: "Food" 
     },
     { 
       id: 14,
       date: "2023-06-01", 
       itemBought: "Groceries2", 
-      price: 50, 
+      price: 505, 
       category: "Transportation" 
     },
     { 
       id: 11,
       date: "2023-06-01", 
       itemBought: "Groceries3", 
-      price: 50, 
+      price: 150, 
       category: "Entertainment" 
     },
     { 
       id: 12,
       date: "2023-06-01", 
       itemBought: "Groceries4", 
-      price: 50, 
+      price: 250, 
       category: "Utilities" 
     },
     { 
       id: 13,
       date: "2023-06-01", 
       itemBought: "Groceries5", 
-      price: 50, 
+      price: 750, 
       category: "Others" 
     },
     { 
       id: 20,
       date: "2023-06-01", 
       itemBought: "Groceries", 
-      price: 50, 
+      price: 850, 
       category: "Food" 
     },
     { 
       id: 24,
       date: "2023-06-01", 
       itemBought: "Groceries2", 
-      price: 50, 
+      price: 950, 
       category: "Transportation" 
     },
     { 
       id: 21,
       date: "2023-06-01", 
       itemBought: "Groceries3", 
-      price: 50, 
+      price: 250, 
       category: "Entertainment" 
     },
     { 
       id: 22,
       date: "2023-06-01", 
       itemBought: "Groceries4", 
-      price: 50, 
+      price: 570, 
       category: "Utilities" 
     },
     { 
       id: 23,
       date: "2023-06-01", 
       itemBought: "Groceries5", 
-      price: 50, 
+      price: 500, 
       category: "Others" 
     },
     { 
       id: 30,
       date: "2023-06-01", 
       itemBought: "Groceries", 
-      price: 50, 
+      price: 580, 
       category: "Food" 
     },
     { 
       id: 34,
       date: "2023-06-01", 
       itemBought: "Groceries2", 
-      price: 50, 
+      price: 590, 
       category: "Transportation" 
     },
     { 
       id: 31,
       date: "2023-06-01", 
       itemBought: "Groceries3", 
-      price: 50, 
+      price: 650, 
       category: "Entertainment" 
     },
     { 
       id: 32,
       date: "2023-06-01", 
       itemBought: "Groceries4", 
-      price: 50, 
+      price: 570, 
       category: "Utilities" 
     },
     { 
       id: 33,
       date: "2023-06-01", 
       itemBought: "Groceries5", 
-      price: 50, 
+      price: 520, 
       category: "Others" 
     },
   ],
   selectedCategory: "all",
   searchQuery: "",
+  sortOption: "",
 }
 
 const TransactionSlice = createSlice({
@@ -155,9 +156,6 @@ const TransactionSlice = createSlice({
     addTransaction: (state, action) => {
       state.transactions.push(action.payload)
     }, 
-    editTransaction: () => {
-
-    },
     deleteTransaction: (state, action) => {
       state.transactions = state.transactions.filter(transaction => transaction.id !== action.payload)
     },
@@ -166,9 +164,12 @@ const TransactionSlice = createSlice({
     },
     setSelectedCategory: (state, action: PayloadAction<Category | "all">) => {
       state.selectedCategory = action.payload
+    },
+    setSortOption: (state, action: PayloadAction<SortOption>) => {
+      state.sortOption = action.payload
     }
   }
 })
 
-export const { addTransaction, editTransaction, deleteTransaction, setSearchQuery, setSelectedCategory} = TransactionSlice.actions
+export const { addTransaction, deleteTransaction, setSearchQuery, setSelectedCategory, setSortOption} = TransactionSlice.actions
 export default TransactionSlice.reducer

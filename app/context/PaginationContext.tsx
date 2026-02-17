@@ -1,6 +1,6 @@
 "use client"
 
-import { createContext, useContext, useState, ReactNode, useEffect} from "react"
+import { createContext, useContext, useState, ReactNode  } from "react"
 import { PaginationContextType } from "../Interface"
 import { useMediaQuery } from "./DesktopSize"
 import { useAppSelector } from "../store/hook"
@@ -19,12 +19,6 @@ export const PaginationProvider = ({children} : {children: ReactNode}) => {
   const startIndex =(currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const currentTransactions = transactions.slice(startIndex, endIndex)
-
-  // useEffect(() => {
-  //   if(currentPage > totalPages && totalPages > 0){
-  //     setCurrentPage(totalPages)
-  //   }
-  // }, [currentPage, totalPages])
 
   const goToPrevious = () => {
     setCurrentPage(prev => Math.max(prev - 1, 1))

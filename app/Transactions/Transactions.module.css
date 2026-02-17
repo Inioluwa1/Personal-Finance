@@ -39,10 +39,10 @@
   }
 }
 
-@media screen and (min-width: 749px) {
+@media screen and (min-width: 749px) and (max-width: 1023px) {
   .transactionContainer{
     min-height: 60vh;
-    /* border: 3px solid yellow */
+    border: 3px solid yellow
   }
   .displayContainer{
     /* border: 3px solid green; */

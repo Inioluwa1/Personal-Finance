@@ -1,9 +1,9 @@
 import React from 'react'
 import styles from "./TransactionComponents.module.css"
-import { Category } from '@/app/Interface'
+import { Category, SortOption } from '@/app/Interface'
 import { IoIosSearch } from 'react-icons/io'
 import { useAppDispatch } from '@/app/store/hook'
-import { setSearchQuery, setSelectedCategory } from '@/app/store/TransactionSlice'
+import { setSearchQuery, setSelectedCategory, setSortOption } from '@/app/store/TransactionSlice'
 import { usePaginationContext } from '@/app/context/PaginationContext'
 
 export default function TransactionInput() {
@@ -11,7 +11,7 @@ export default function TransactionInput() {
   const { setCurrentPage }  = usePaginationContext();
   
   return (
-    <div className={styles.transactionInputContainer}>
+    <div className={styles.transactionInputContainer}> 
       <div className={styles.inputContainer}>
         <input 
           type='text' 
@@ -23,19 +23,26 @@ export default function TransactionInput() {
       <div className={styles.chooseInput}>
         <div className={styles.sortBy}>
           <label> Sort by </label>
-          <select name="sort" className={styles.sortBySelect}>
-            <option> Latest </option>
-            <option> Oldest </option>
-            <option> A to Z </option>
-            <option> Z to A </option>
-            <option> Highest </option>
-            <option> Lowest </option>
+          <select 
+            name="sort" 
+            className={styles.sortBySelect}
+            onChange={(e) => {
+              dispatch(setSortOption(e.target.value as SortOption))
+              setCurrentPage(1)
+            }}
+          >
+            <option value="latest"> Latest </option>
+            <option value="oldest"> Oldest </option>
+            <option value="a-z"> A to Z </option>
+            <option value="z-a"> Z to A </option>
+            <option value="highest"> Highest </option>
+            <option value="lowest"> Lowest </option>
           </select>
         </div>
         <div  className={styles.category}>
           <label> Category </label>
           <select 
-            name="category" 
+            name="category"
             className={styles.categorySelect} 
             onChange={(e) => {
               dispatch(setSelectedCategory(e.target.value as Category | "all"))

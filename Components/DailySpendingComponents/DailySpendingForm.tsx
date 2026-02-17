@@ -16,10 +16,10 @@ export default function DailySpendingForm() {
   }
 
   const [formData, setFormData] = useState<DailySpendingFormProps>({
-    id:"",
+    id: "",
     date: "",
     itemBought: "",
-    price: "",
+    price: "", 
     category: "",
   })
 

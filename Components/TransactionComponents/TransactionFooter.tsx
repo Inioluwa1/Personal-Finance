@@ -11,7 +11,11 @@ export default function TransactionFooter() {
   return (
     <div className={styles.transactionFooter}>
 
-      <button className={styles.prevPage} onClick={goToPrevious} disabled={currentPage === 1}>
+      <button 
+        className={styles.prevPage} 
+        onClick={goToPrevious} 
+        disabled={currentPage === 1}
+      >
         <Image src="assets/images/icon-caret-left.svg" alt="Prev" width={10} height={10} className={styles.prevLinkImage} />
         <p> Prev </p>
       </button>

@@ -32,6 +32,7 @@ export interface PaginationContextType {
 }
 
 export type Category = "Food" | "Transportation" | "Entertainment" | "Utilities" | "Others";
+export type SortOption = "a-z" | "z-a" | "highest" | "lowest" | "latest" | "oldest";
 
 export interface Transaction {
   id: number;
@@ -45,6 +46,7 @@ export interface TransactionState {
   transactions: Transaction[];
   selectedCategory: Category | 'all';
   searchQuery: string;
+  sortOption: SortOption | string;
 }
 
 export interface DailySpendingFormProps {
