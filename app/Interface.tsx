@@ -68,3 +68,23 @@ export const CategoryImageMap:Record <Category, StaticImageData> = {
   Utilities: Utilities,
   Others: Others,
 }
+
+// Auth Context Types
+export interface SignUpDetails {
+  name: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+}
+
+export interface LoginDetails {
+  email: string;
+  password: string;
+}
+
+export interface AuthContextType {
+  signUpDetails: SignUpDetails;
+  loginDetails: LoginDetails;
+  handleSignUpChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleLoginChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}

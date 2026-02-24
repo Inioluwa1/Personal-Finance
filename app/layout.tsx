@@ -1,24 +1,17 @@
 import type { Metadata } from "next";
-import "./globals.css";
-import Providers from "./providers";
+import "./globals.css"
 
-export const metadata: Metadata = {
+export const metadata:Metadata = {
   title: "Personal Finance",
-  description: "Your personal finance tracker",
-};
+  description: "Your personal finance tracker"
+}
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
+export default function RootLayout ({children}: { children: React.ReactNode}){
+  return(
     <html lang="en">
       <body>
-        <Providers>
-            {children}
-        </Providers>
+        {children}
       </body>
     </html>
-  );
+  )
 }

@@ -1,4 +1,4 @@
-import styles from "./page.module.css";
+import styles from "./Dashboard.module.css";
 import BalanceCard from "@/Components/BalanceCard";
 import TransactionsCard from "@/Components/TransactionsCard";
 import RecurringCard from "@/Components/RecurringCard";

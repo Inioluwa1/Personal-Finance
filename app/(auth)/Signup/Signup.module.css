@@ -1,0 +1,67 @@
+.SignupPageContainer{
+  padding: 1rem;
+  /* border: 3px solid red; */
+  width: 100%;
+  height: 100%
+}
+.SignupPageContainer h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.SignupForm{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.SignupForm label{
+  font-size: 1.2rem;
+}
+.nameInput, .emailInput{
+  width: 100%;
+  padding: 0.6rem;
+  font: 1.5rem;
+  border-radius: 0.2rem;
+  border: 1px solid grey;
+}
+.PasswordInput{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid grey;
+  border-radius: 0.2rem;
+  padding: 0.2rem
+}
+.passwordInput{
+  width: 100%;
+  padding: 0.4rem;
+  font: 1.5rem;
+  border: none;
+  outline: none;
+}
+.passwordIcon{
+  margin-right: 0.5rem;
+  cursor: pointer
+}
+
+.SignupForm button{
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  color: #ffff;
+  background-color: rgb(32, 31, 36);
+  border: none;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.SignupForm button:hover{
+  background-color: rgba(32, 31, 36, 0.5);
+  color: black;
+}
+.LoginLink{
+  display: flex;
+  gap: 0.5rem;
+  width: fit-content;
+  margin: auto
+}

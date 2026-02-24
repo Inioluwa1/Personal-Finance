@@ -1,0 +1,30 @@
+.AuthenticationPage{
+  display: flex;
+  /* border: 3px solid red; */
+  height: 95%;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto
+}
+.MainSideBar{
+  /* border: 3px solid green; */
+  width: 40%;
+  height: 98%;
+  margin-left: 0.5rem;
+  border-radius: 0.5rem;
+}
+.AppContainer{
+  /* border: 3px solid blue; */
+  width: 35%;
+  /* min-height: 40%; */
+  margin-right: 10rem;
+  background-color: #ffff;
+  border-radius: 0.3rem;
+}
+.MainSideBarImage{
+  background-image: url("/assets/images/Sidebar.png");
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
