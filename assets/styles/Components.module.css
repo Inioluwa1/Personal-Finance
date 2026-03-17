@@ -56,6 +56,15 @@
   color: grey;
   margin-left: 1rem
 }
+.logout{
+  width: 90%;
+  margin-top: 1.5rem;
+  /* border: 2px solid white; */
+  padding: 0.7rem 1rem;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  cursor: pointer;
+}
 
 .minimizeMenu{
   display: flex;
@@ -295,10 +304,30 @@
   .Container{
     width: 100%;
     /* border: 3px solid green; */
-    /* padding: 0; */
+    padding: 0.3rem;
+  }
+  .indTransactionCardContainer{
+    /* border: 3px solid yellow; */
+    padding: 0;
+    justify-content: flex-start;
+  }
+  .IndTransactionCardItem {
+    margin-left: 1rem;
+    /* border: 3px solid green; */
+    width: 40%;
+    word-wrap: break-word;
+  }
+  .IndTransactionCardCategory{
+    margin-left: 1rem;
+    /* border: 3px solid green; */
+    width: fit-content
   }
   .IndTransactionCardPrice{
     display: none;
+  }
+  .Reoccured1, .Reoccured2, .Reoccured3, .Reoccured4{
+    width: 100%;
+    margin: auto;
   }
   
 }

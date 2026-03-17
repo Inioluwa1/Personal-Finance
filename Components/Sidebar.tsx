@@ -1,27 +1,35 @@
 "use client"
 
 import React from 'react'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
 import styles from "@/assets/styles/Components.module.css"
 import { useUIContext } from '@/app/context/UIContext'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { useMediaQuery } from '@/app/context/DesktopSize';
+import { useAuthContext } from '@/app/context/AuthContext'
 
 export default function Sidebar() {
   const pathname = usePathname();
+  const router = useRouter();
   const { menuTray, openMenuTray, closeMenuTray } = useUIContext();
+  const { logout } = useAuthContext()
   const isDesktop = useMediaQuery("(min-width: 768px)")
   const closeSideBar = () => {
     if(!isDesktop){
       closeMenuTray();
     }
   }
+  const Logout = () => {
+    logout();
+    router.push("/")
+
+  }
   const SidebarLinks = [
     {
       name: "Overview",
-      href: "/",
+      href: "/Dashboard",
       icon: "assets/images/icon-nav-overview.svg"
     },
     {
@@ -60,6 +68,9 @@ export default function Sidebar() {
                 <Link href={link.href} className={styles.link}> {link.name} </Link>
               </span>
             )})}
+          </div>
+          <div className={styles.logout} onClick={Logout}>
+            <p> Logout </p>
           </div>
           <div className={styles.minimizeMenu} onClick={closeMenuTray} >
             <Image src="assets/images/icon-minimize-menu.svg" alt="Minimize menu" width={15} height={15} />

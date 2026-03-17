@@ -13,6 +13,7 @@
 @media screen and (max-width: 1500px) {
   .Form{
     height: auto;
+    padding: 0.2rem;
   }
 
   .Display{

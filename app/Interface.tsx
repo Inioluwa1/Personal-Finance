@@ -87,4 +87,9 @@ export interface AuthContextType {
   loginDetails: LoginDetails;
   handleSignUpChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handleLoginChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  clearSignUpDetails: () => void;
+  clearLoginDetails: () => void;
+  isLoggedin: boolean;
+  login: () => void
+  logout: () => void
 }

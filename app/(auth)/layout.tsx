@@ -1,6 +1,6 @@
 import "./globals.css";
+import Image from "next/image"
 import MainSideBar from "./MainSideBar";
-import { AuthProvider } from "../context/AuthContext";
 
 export default function RootLayout({
   children,
@@ -12,10 +12,11 @@ export default function RootLayout({
       <div className="MainSideBar" >
         <MainSideBar />
       </div>
+      <div className="MobileImageContainer">
+        <Image src="assets/images/logo-large.svg" alt="Finance logo" width={100} height={50} className="MobileImage" />
+      </div>
       <div className="AppContainer">
-        <AuthProvider>
-          {children}
-        </AuthProvider>
+        {children}
       </div>
     </div>
   );

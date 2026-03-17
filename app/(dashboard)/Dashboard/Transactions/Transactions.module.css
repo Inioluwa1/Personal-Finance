@@ -1,7 +1,8 @@
 .transactionContainer{
   /* border: 3px solid red; */
   height: 100%;
-  position: relative;
+  /* position: relative; */
+  padding-bottom: 0.3rem;
 }
 .displayContainer{
   /* border: 3px solid yellow; */
@@ -30,26 +31,39 @@
     height: 83vh;
   }
   .displayContainer{
-    height: 78vh;
+    height: 94%;
     padding: 0;
     /* border: 3px solid red */
   }
   .transactionDisplay{
     margin-top: 0.5rem;
+    padding: 0.1rem;
+  }
+  .transactionFooter{
+    bottom: 8;
+    width: 94%;
+    left: 3%
   }
 }
 
 @media screen and (min-width: 749px) and (max-width: 1023px) {
   .transactionContainer{
-    min-height: 60vh;
-    border: 3px solid yellow
+    height: 90vh;
+    /* border: 3px solid green; */
+    padding: 0.1rem;
   }
   .displayContainer{
     /* border: 3px solid green; */
     margin-top: 0.5rem;
-    min-height: 60vh;
+    height: fit-content;
+    padding-bottom: 3rem;
+    /* display: none; */
   }
   .transactionContainer{
     height: 70vh
+  }
+  .transactionFooter{
+    bottom: -40
+    /* display: none; */
   }
 }

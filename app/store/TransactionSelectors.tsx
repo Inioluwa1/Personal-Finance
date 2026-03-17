@@ -6,21 +6,6 @@ export const selectSelectedCategory = (state: RootState) => state.transactions.s
 export const selectSearchQuery = (state: RootState) => state.transactions.searchQuery
 export const selectSortOption = (state: RootState) => state.transactions.sortOption
 
-// export const filteredTransactions = createSelector(
-//   [selectTransactions, selectSelectedCategory, selectSearchQuery],
-//   (transactions, category, query) => {
-//     if ((category === "all" || !category) && !query.trim()) return transactions;
-
-//     return transactions.filter(transaction => {
-//         const matchesCategory = (category === "all" || !category) ? true : transaction.category === category
-//         const matchesSearch = query.trim() ? transaction.itemBought.toLowerCase().includes(query.toLowerCase()) : true
-
-//         return matchesCategory && matchesSearch 
-//       }
-//     )
-//   }
-// )
-
 export const filteredTransactions = createSelector(
   [selectTransactions, selectSelectedCategory, selectSearchQuery, selectSortOption], 
   (transactions, category, query, sortOption) => {

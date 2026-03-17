@@ -1,16 +1,19 @@
-"use client"
+"use client" 
 
 import { createContext, useContext, useState, ReactNode } from "react"
 import { SignUpDetails, LoginDetails, AuthContextType } from "@/app/Interface"
+
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({children}:{children: ReactNode}) => {
-  const [signUpDetails, setSignUpDetails] = useState<SignUpDetails>({
+  const [isLoggedin, setIsLoggedIn] = useState<boolean>(false);
+  const initialSignUpDetails: SignUpDetails = {
     name: "",
     email: "",
     password: "",
     confirmPassword: "",
-  })
+  }
+  const [signUpDetails, setSignUpDetails] = useState<SignUpDetails>(initialSignUpDetails)
   const [loginDetails, setLoginDetails] = useState<LoginDetails>({
     email: "",
     password: "",
@@ -31,6 +34,28 @@ export const AuthProvider = ({children}:{children: ReactNode}) => {
       [name] : value
     }))
   }
+
+  const clearSignUpDetails = () => {
+    setSignUpDetails(initialSignUpDetails)
+  }
+
+  const clearLoginDetails = () => {
+    setLoginDetails({
+      email: "",
+      password: ""
+    })
+  }
+
+  const login = () => {
+    document.cookie = "token=fake-token; path=/"
+    setIsLoggedIn(true)
+  }
+
+  const logout = () => {
+    document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"
+    setIsLoggedIn(false)
+  }
+
   return(
     <AuthContext.Provider
     value={{
@@ -38,6 +63,11 @@ export const AuthProvider = ({children}:{children: ReactNode}) => {
       loginDetails,
       handleSignUpChange,
       handleLoginChange,
+      clearSignUpDetails,
+      clearLoginDetails,
+      isLoggedin,
+      login,
+      logout
     }}
     >
       {children}

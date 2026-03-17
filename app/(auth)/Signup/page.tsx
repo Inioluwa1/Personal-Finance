@@ -8,7 +8,7 @@ import { useAuthContext } from '@/app/context/AuthContext'
 import { IoIosEye, IoIosEyeOff } from "react-icons/io";
 
 export default function SignupPage() {
-  const {signUpDetails, handleSignUpChange} = useAuthContext()
+  const {signUpDetails, handleSignUpChange, clearSignUpDetails} = useAuthContext()
   const router = useRouter()
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
@@ -18,7 +18,8 @@ export default function SignupPage() {
   const handleSignUp = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     if(checkPassword) return
-    router.push("/")
+    router.push("/Login")
+    clearSignUpDetails();
   }
 
   const showPasswordHandler = () => {
@@ -29,6 +30,7 @@ export default function SignupPage() {
     setShowConfirmPassword(!showConfirmPassword)
   }
 
+  const setDisabled:boolean = !(signUpDetails.name && signUpDetails.email && signUpDetails.password && signUpDetails.confirmPassword && !checkPassword) 
 
   return (
     <div className={styles.SignupPageContainer}>
@@ -85,11 +87,16 @@ export default function SignupPage() {
           }
         </div>
         {checkPassword && <p> Passwords do not match </p>}
-        <button> Create Account </button>
+        <button 
+          className={`${setDisabled? styles.disabled : styles.SignupFormButton }`}
+          disabled={setDisabled}
+        > 
+          Create Account 
+        </button>
       </form>
       <span className={styles.LoginLink}> 
         <p> Already have an account? </p>
-        <Link href="/"> Login </Link>
+        <Link href="/Login"> Login </Link>
       </span>
     </div>
   )

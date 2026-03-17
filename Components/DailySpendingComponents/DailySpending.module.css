@@ -72,10 +72,10 @@
 }
 .close{
   cursor: pointer;
-  color: red;
+  color: #6B7280;
 }
 .close:hover{
-  color: rgba(255, 0, 0, 0.5);
+  color: #9F1239;
 }
 .transactionItemDetails{
   /* border: 3px solid blue; */

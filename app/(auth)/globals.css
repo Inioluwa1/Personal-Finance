@@ -14,6 +14,9 @@
   margin-left: 0.5rem;
   border-radius: 0.5rem;
 }
+.MobileImageContainer{
+  display: none;
+}
 .AppContainer{
   /* border: 3px solid blue; */
   width: 35%;
@@ -27,4 +30,73 @@
   height: 100%;
   background-repeat: no-repeat;
   background-size: contain;
+}
+.Loading{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+}
+
+@media screen and (max-width: 900px){
+  .AuthenticationPage{
+    flex-direction: column;
+    width: 100%;
+    /* border: 3px solid yellow; */
+    height: 80vh;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .MainSideBar{
+    display: none;
+  }
+  .AppContainer{
+    width: 100%;
+    margin: 0;
+  }
+  .MainSideBarImage{
+    background-size: fill;
+  }
+  .MobileImageContainer{
+    display: block;
+    width: 100%;
+    background-Color: rgb(32, 31, 36);
+    padding: 0.5rem;
+    border-bottom-left-radius: 0.4rem;
+    border-bottom-right-radius: 0.4rem;
+    margin-bottom: 3rem;
+  }
+  .MobileImage{
+    /* border: 3px solid red; */
+    margin: auto;
+    width: 40%;
+    display: block;
+  }
+}
+
+@media screen and (min-width: 901px) and (max-width: 1300px){
+  .AuthenticationPage{
+    width: 90%;
+    justify-content: space-around;
+  }
+  .MainSideBar{
+    height: 50%
+  }
+  .AppContainer{
+    margin: 0
+  }
+}
+
+@media screen and (min-width: 1301px) and (max-width: 1600px){
+  .AuthenticationPage{
+    width: 90%;
+    justify-content: space-around;
+  }
+  .MainSideBar{
+    height: 85%
+  }
+  .AppContainer{
+    margin: 0
+  }
+  
 }

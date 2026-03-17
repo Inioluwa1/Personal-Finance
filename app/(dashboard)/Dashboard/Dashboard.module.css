@@ -35,5 +35,13 @@
   .Transactions, .Recurring{
     width: 100%;
     margin-bottom: 1rem;
+    /* border: 3px solid red */
   }
+  .page h1{
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (min-width: 901px) and (max-width: 1200px){
+
 }

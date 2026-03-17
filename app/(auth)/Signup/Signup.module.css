@@ -43,7 +43,7 @@
   cursor: pointer
 }
 
-.SignupForm button{
+.SignupFormButton{
   width: 100%;
   padding: 0.5rem;
   font-size: 1.2rem;
@@ -55,7 +55,7 @@
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
-.SignupForm button:hover{
+.SignupFormButton:hover{
   background-color: rgba(32, 31, 36, 0.5);
   color: black;
 }
@@ -64,4 +64,16 @@
   gap: 0.5rem;
   width: fit-content;
   margin: auto
+}
+.disabled{
+  opacity: 0.3;
+  cursor: not-allowed;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  color: #ffff;
+  background-color: rgb(32, 31, 36);
+  border: none;
+  border-radius: 0.2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
