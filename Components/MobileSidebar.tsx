@@ -16,27 +16,27 @@ export default function MobileSidebar() {
     {
       name: "Overview",
       href: "/",
-      icon: "assets/images/icon-nav-overview.svg"
+      icon: "/assets/images/icon-nav-overview.svg"
     },
     {
       name: "Daily Spending",
-      href: "/DailySpending",
-      icon: "assets/images/icon-nav-transactions.svg"
+      href: "/Dashboard/DailySpending",
+      icon: "/assets/images/icon-nav-transactions.svg"
     },
     {
       name: "Budget",
-      href: "/Budget",
-      icon: "assets/images/icon-nav-budgets.svg"
+      href: "/Dashboard/Budget",
+      icon: "/assets/images/icon-nav-budgets.svg"
     },
     {
       name: "Transactions",
-      href: "/Transactions",
-      icon: "assets/images/icon-nav-transactions.svg"
+      href: "/Dashboard/Transactions",
+      icon: "/assets/images/icon-nav-transactions.svg"
     },
     {
       name: "Recurring Bills",
-      href: "/RecurringBills",
-      icon: "assets/images/icon-nav-recurring-bills.svg"
+      href: "/Dashboard/RecurringBills",
+      icon: "/assets/images/icon-nav-recurring-bills.svg"
     },
   ]
 

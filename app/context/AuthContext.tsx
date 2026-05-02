@@ -2,10 +2,14 @@
 
 import { createContext, useContext, useState, ReactNode } from "react"
 import { SignUpDetails, LoginDetails, AuthContextType } from "@/app/Interface"
+import { loginUser, signupUser } from "@/app/api/auth"
+import { useRouter } from "next/navigation"
+
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({children}:{children: ReactNode}) => {
+  const router = useRouter()
   const [isLoggedin, setIsLoggedIn] = useState<boolean>(false);
   const initialSignUpDetails: SignUpDetails = {
     name: "",
@@ -49,11 +53,39 @@ export const AuthProvider = ({children}:{children: ReactNode}) => {
   const login = () => {
     document.cookie = "token=fake-token; path=/"
     setIsLoggedIn(true)
+    router.push("/Dashboard")
+
+    // try {
+    //   await loginUser(loginDetails)
+    //   document.cookie = "token=fake-token; path=/"
+    //   setIsLoggedIn(true)
+    //   router.push("/Dashboard")
+    //   clearLoginDetails()
+    // }
+    // catch (error) {
+    //   console.error("Login failed:", error)
+    // }
   }
 
   const logout = () => {
     document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"
     setIsLoggedIn(false)
+    router.push("/")
+  }
+
+  const signup = async () => {
+    const API_signup_details = {
+      name: signUpDetails.name,
+      email: signUpDetails.email,
+      password: signUpDetails.password,
+    }
+    try{
+      await signupUser(API_signup_details)
+      router.push("/Login")
+      clearSignUpDetails()
+    } catch (error){
+      console.error("Signup failed:", error)
+    }
   }
 
   return(
@@ -67,7 +99,8 @@ export const AuthProvider = ({children}:{children: ReactNode}) => {
       clearLoginDetails,
       isLoggedin,
       login,
-      logout
+      logout,
+      signup,
     }}
     >
       {children}

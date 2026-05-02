@@ -92,4 +92,17 @@ export interface AuthContextType {
   isLoggedin: boolean;
   login: () => void
   logout: () => void
+  signup: () => void
+}
+
+export interface Budget {
+  id: number,
+  category: number,
+  amount: number,
+  type: string,
+  description: string,
+}
+
+export interface CategoryAPI{
+  id: number
 }

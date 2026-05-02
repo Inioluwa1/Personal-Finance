@@ -8,7 +8,7 @@ export default function RecurringCard() {
     <div className={styles.Container}>
       <div className={styles.Header}> 
         <p> Recurring Bills </p>
-        <Link href="/RecurringBills" className={styles.Link}> 
+        <Link href="/Dashboard/RecurringBills" className={styles.Link}> 
           See Details 
           <Image src="assets/images/icon-caret-right.svg" alt="Next" width={10} height={10} className={styles.LinkImage} />
         </Link>

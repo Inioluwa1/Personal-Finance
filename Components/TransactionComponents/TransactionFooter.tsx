@@ -16,7 +16,7 @@ export default function TransactionFooter() {
         onClick={goToPrevious} 
         disabled={currentPage === 1}
       >
-        <Image src="assets/images/icon-caret-left.svg" alt="Prev" width={10} height={10} className={styles.prevLinkImage} />
+        <Image src="/assets/images/icon-caret-left.svg" alt="Prev" width={10} height={10} className={styles.prevLinkImage} />
         <p> Prev </p>
       </button>
 
@@ -38,7 +38,7 @@ export default function TransactionFooter() {
         disabled= {currentPage === totalPages}
       >
         <p> Next </p>
-        <Image src="assets/images/icon-caret-right.svg" alt="Next" width={10} height={10} className={styles.nextLinkImage} />
+        <Image src="/assets/images/icon-caret-right.svg" alt="Next" width={10} height={10} className={styles.nextLinkImage} />
       </button>
     </div>
   )

@@ -1,7 +1,7 @@
 "use client"
 
 import React from 'react'
-import { usePathname, useRouter } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
 import styles from "@/assets/styles/Components.module.css"
@@ -12,7 +12,6 @@ import { useAuthContext } from '@/app/context/AuthContext'
 
 export default function Sidebar() {
   const pathname = usePathname();
-  const router = useRouter();
   const { menuTray, openMenuTray, closeMenuTray } = useUIContext();
   const { logout } = useAuthContext()
   const isDesktop = useMediaQuery("(min-width: 768px)")
@@ -20,11 +19,6 @@ export default function Sidebar() {
     if(!isDesktop){
       closeMenuTray();
     }
-  }
-  const Logout = () => {
-    logout();
-    router.push("/")
-
   }
   const SidebarLinks = [
     {
@@ -34,22 +28,22 @@ export default function Sidebar() {
     },
     {
       name: "Daily Spending",
-      href: "/DailySpending",
+      href: "/Dashboard/DailySpending",
       icon: "assets/images/icon-nav-transactions.svg"
     },
     {
       name: "Budget",
-      href: "/Budget",
+      href: "/Dashboard/Budget",
       icon: "assets/images/icon-nav-budgets.svg"
     },
     {
       name: "Transactions",
-      href: "/Transactions",
+      href: "/Dashboard/Transactions",
       icon: "assets/images/icon-nav-transactions.svg"
     },
     {
       name: "Recurring Bills",
-      href: "/RecurringBills",
+      href: "/Dashboard/RecurringBills",
       icon: "assets/images/icon-nav-recurring-bills.svg"
     },
   ]
@@ -69,7 +63,7 @@ export default function Sidebar() {
               </span>
             )})}
           </div>
-          <div className={styles.logout} onClick={Logout}>
+          <div className={styles.logout} onClick={logout}>
             <p> Logout </p>
           </div>
           <div className={styles.minimizeMenu} onClick={closeMenuTray} >

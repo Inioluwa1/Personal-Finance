@@ -3,13 +3,11 @@
 import React, { useState } from 'react'
 import Link from "next/link"
 import styles from "./Signup.module.css"
-import { useRouter } from "next/navigation"
 import { useAuthContext } from '@/app/context/AuthContext'
 import { IoIosEye, IoIosEyeOff } from "react-icons/io";
 
 export default function SignupPage() {
-  const {signUpDetails, handleSignUpChange, clearSignUpDetails} = useAuthContext()
-  const router = useRouter()
+  const {signUpDetails, handleSignUpChange, signup} = useAuthContext()
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
     
@@ -18,8 +16,7 @@ export default function SignupPage() {
   const handleSignUp = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     if(checkPassword) return
-    router.push("/Login")
-    clearSignUpDetails();
+    signup()
   }
 
   const showPasswordHandler = () => {
@@ -86,7 +83,7 @@ export default function SignupPage() {
             <IoIosEye onClick={showConfirmPasswordHandler} className={styles.passwordIcon} />
           }
         </div>
-        {checkPassword && <p> Passwords do not match </p>}
+        {checkPassword && <p className={styles.errorText}> Passwords do not match </p>} 
         <button 
           className={`${setDisabled? styles.disabled : styles.SignupFormButton }`}
           disabled={setDisabled}
